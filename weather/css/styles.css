@@ -1,0 +1,175 @@
+.refresh-button {
+    height: 60px;
+    width: 60px;
+    background: white;
+    border: 0;
+    margin: 10px;
+}
+
+.window {
+    max-width: 1080px;
+    margin: auto;
+}
+
+.big-icon-weather {
+    height: 150px;
+    width: 150px;
+}
+
+.main-header {
+    font-size: 30px;
+    display: flex;
+    flex-direction: row;
+    color: gray;
+    justify-content: space-between;
+    margin: 10px;
+    padding: 0px;
+}
+
+.card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+.wind,
+.cloudy,
+.pressure,
+.humidity,
+.coordinates {
+    display: flex;
+    margin: 10px;
+    justify-content: space-between;
+    background-color: gray;
+    color: white;
+    padding: 0.5em;
+    box-sizing: border-box;
+    font-size: 25px;
+}
+
+.type-param {
+    font-weight: bold;
+    justify-content: space-between;
+}
+
+.add-city {
+    position: fixed;
+}
+
+.favorites {
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.container {
+    display: grid;
+    color: gray;
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 400px 1fr;
+    grid-template-areas:
+        "main-header refresh-button"
+        "card-city card-params"
+        "favorites add-card"
+        "card card2"
+        "card3 card4"
+        "card5 card6";
+}
+
+.delete {
+    background: white;
+    border: 0;
+    height: 60px;
+    width: 60px;
+}
+
+.icon-weather {
+    height: 60px;
+    width: 60px;
+}
+
+.add-button {
+    background: white;
+    border: 0;
+    height: 60px;
+    width: 60px;
+}
+
+
+.temperature {
+    color: gray;
+    font-size: 40px;
+}
+
+.add-card {
+    text-align: right;
+    margin: 10px;
+}
+
+.add-text {
+    font-size: 20px;
+    vertical-align: top;
+    height: 60px;
+    width: 300px;
+}
+
+.data {
+    display: flex;
+    justify-content: space-between;
+    align-content: bottom;
+    margin: 10px;
+}
+
+.name {
+    color: gray;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.big-name {
+    color: gray;
+    font-size: 60px;
+    margin: 10px;
+}
+
+.big-temperature {
+    color: gray;
+    font-size: 100px;
+}
+
+.list-params {
+    padding: 0;
+    margin: 0px;
+}
+
+@media all and (max-width: 600px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+            "main-header"
+            "big-name"
+            "data"
+            "card-params"
+            "favorites"
+            "add-card"
+            "card"
+            "card2"
+            "card3"
+            "card4"
+            "card5"
+            "card6";
+    }
+
+    .refresh-button {
+        height: 60px;
+        width: 60px;
+        background: white;
+        border: 0;
+        margin: 10px;
+        position: absolute;
+        right: 0;
+    }
+}

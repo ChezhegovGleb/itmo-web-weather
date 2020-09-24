@@ -1,14 +1,13 @@
-.refresh-button {
-    height: 60px;
-    width: 60px;
-    background: white;
-    border: 0;
-    margin: 10px;
+.refresh-button-mobile {
+    display: none;
 }
 
-.window {
-    max-width: 1080px;
-    margin: auto;
+.refresh-button-desktop {
+    height: 60px;
+    font-size: 20px;
+    border: 0;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .big-icon-weather {
@@ -22,15 +21,9 @@
     flex-direction: row;
     color: gray;
     justify-content: space-between;
-    margin: 10px;
     padding: 0px;
-}
-
-.card-title {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .wind,
@@ -63,6 +56,8 @@
 }
 
 .container {
+    max-width: 1080px;
+    margin: auto;
     display: grid;
     color: gray;
     text-align: left;
@@ -72,9 +67,9 @@
         "main-header refresh-button"
         "card-city card-params"
         "favorites add-card"
-        "card card2"
-        "card3 card4"
-        "card5 card6";
+        "card card"
+        "card card"
+        "card card";
 }
 
 .delete {
@@ -100,6 +95,7 @@
 .temperature {
     color: gray;
     font-size: 40px;
+    vertical-align: bottom;
 }
 
 .add-card {
@@ -143,7 +139,63 @@
     margin: 0px;
 }
 
-@media all and (max-width: 600px) {
+.card-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+
+.name,
+.icon-weather,
+.temperature,
+.delete {
+    margin-top: auto;
+    margin-bottom: 0px;
+}
+
+.card {
+    position: relative;
+    vertical-align: bottom;
+}
+
+@media all and (max-width: 850px) {
+
+    .refresh-button-mobile {
+        display: block;
+        height: 60px;
+        width: 60px;
+        background: white;
+        border: 0;
+        margin: 10px;
+        margin-top: auto;
+        margin-bottom: auto;
+        position: absolute;
+        right: 0;
+    }
+
+
+    .refresh-button-desktop {
+        display: none;
+    }
+
+    .add-card {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .add-text {
+        flex: 1;
+    }
+    .add-button {
+        flex: none;
+        background: white;
+        border: 0;
+        height: 60px;
+        width: 60px;
+    }
+
     .container {
         display: grid;
         grid-template-columns: 1fr;
@@ -156,20 +208,11 @@
             "favorites"
             "add-card"
             "card"
-            "card2"
-            "card3"
-            "card4"
-            "card5"
-            "card6";
+            "card"
+            "card"
+            "card"
+            "card"
+            "card";
     }
 
-    .refresh-button {
-        height: 60px;
-        width: 60px;
-        background: white;
-        border: 0;
-        margin: 10px;
-        position: absolute;
-        right: 0;
-    }
 }

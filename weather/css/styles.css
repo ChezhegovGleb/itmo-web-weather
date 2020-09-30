@@ -8,22 +8,16 @@
     border: 0;
     margin-top: auto;
     margin-bottom: auto;
+    margin-left: 50px;
+}
+
+.heading-text{
+    margin: 10px;
 }
 
 .big-icon-weather {
     height: 150px;
     width: 150px;
-}
-
-.main-header {
-    font-size: 30px;
-    display: flex;
-    flex-direction: row;
-    color: gray;
-    justify-content: space-between;
-    padding: 0px;
-    margin-top: auto;
-    margin-bottom: auto;
 }
 
 .wind,
@@ -46,13 +40,50 @@
     justify-content: space-between;
 }
 
-.add-city {
-    position: fixed;
-}
-
 .favorites {
     font-size: 30px;
     margin-left: 10px;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.add-card {
+    text-align: right;
+    margin: 10px;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+.add-button {
+    background: white;
+    border: 0;
+    height: 60px;
+    width: 60px;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+
+.list-cards {
+    display: grid;
+    margin: auto;
+    text-align: left;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 400px 1fr;
+    padding: 0;
+    margin: 0px;
+    list-style-type: none;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-template-areas:
+        "card card"
+        "card card"
+        "card card";
+}
+
+.card {
+    position: relative;
+    vertical-align: bottom;
 }
 
 .container {
@@ -62,14 +93,11 @@
     color: gray;
     text-align: left;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 1fr 400px 1fr;
+    grid-template-rows: 1fr;
     grid-template-areas:
-        "main-header refresh-button"
         "card-city card-params"
         "favorites add-card"
-        "card card"
-        "card card"
-        "card card";
+        "list-cards list-cards";
 }
 
 .delete {
@@ -84,23 +112,11 @@
     width: 60px;
 }
 
-.add-button {
-    background: white;
-    border: 0;
-    height: 60px;
-    width: 60px;
-}
-
 
 .temperature {
     color: gray;
     font-size: 40px;
     vertical-align: bottom;
-}
-
-.add-card {
-    text-align: right;
-    margin: 10px;
 }
 
 .add-text {
@@ -155,9 +171,14 @@
     margin-bottom: 0px;
 }
 
-.card {
-    position: relative;
-    vertical-align: bottom;
+.heading{
+    max-width: 1080px;
+    display: flex;
+    font-size: 30px;
+    color: gray;
+    padding: 0px;
+    margin:auto;
+    text-align: left;
 }
 
 @media all and (max-width: 850px) {
@@ -171,8 +192,7 @@
         margin: 10px;
         margin-top: auto;
         margin-bottom: auto;
-        position: absolute;
-        right: 0;
+        float: right;
     }
 
 
@@ -184,10 +204,11 @@
         display: flex;
         flex-direction: row;
     }
-    
+
     .add-text {
         flex: 1;
     }
+
     .add-button {
         flex: none;
         background: white;
@@ -196,23 +217,22 @@
         width: 60px;
     }
 
+    .list-cards {
+        display: contents;
+    }
+
     .container {
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         grid-template-areas:
-            "main-header"
+/*            "heading"*/
             "big-name"
             "data"
             "card-params"
             "favorites"
             "add-card"
-            "card"
-            "card"
-            "card"
-            "card"
-            "card"
-            "card";
+            "list-cards";
     }
 
 }
